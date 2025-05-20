@@ -2,6 +2,8 @@ using System;
 using LabApi.Events.CustomHandlers;
 using LabApi.Features;
 using LabApi.Loader.Features.Plugins;
+using Respawning;
+using Respawning.Graphics;
 
 namespace RemoteKeycard
 {
@@ -28,6 +30,7 @@ namespace RemoteKeycard
         public override void Enable()
         {
             CustomHandlersManager.RegisterEventsHandler(KeycardEventHandler);
+            
         }
 
         public override void Disable()

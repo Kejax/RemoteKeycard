@@ -1,3 +1,4 @@
+using Interactables.Interobjects.DoorButtons;
 using Interactables.Interobjects.DoorUtils;
 using LabApi.Events.Arguments.PlayerEvents;
 using LabApi.Events.CustomHandlers;
@@ -37,11 +38,9 @@ namespace RemoteKeycard
 
         public override void OnPlayerInteractingLocker(PlayerInteractingLockerEventArgs ev)
         {
-            if (ev.Locker is PedestalLocker pedestal)
-            {
                 foreach (Item? item in ev.Player.Items)
                 {
-                    if (item?.Base is IDoorPermissionProvider itemProvider && pedestal.Chamber.Base.PermissionsPolicy.CheckPermissions(itemProvider.GetPermissions(pedestal.Chamber.Base)))
+                    if (item?.Base is IDoorPermissionProvider itemProvider && ev.Locker.Base.PermissionsPolicy.CheckPermissions(itemProvider.GetPermissions(pedestal.Chamber.Base)))
                     {
                         ev.CanOpen = true;
                     }
@@ -50,5 +49,6 @@ namespace RemoteKeycard
             }
         
         }
+        
     }
 }

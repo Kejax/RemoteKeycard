@@ -12,6 +12,7 @@
         <AssemblyName>RemoteKeycard</AssemblyName>
         <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
         <FileAlignment>512</FileAlignment>
+	<LangVersion>12</LangVersion>
     </PropertyGroup>
     <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
         <PlatformTarget>AnyCPU</PlatformTarget>
@@ -42,12 +43,22 @@
         <Reference Include="LabApi">
           <HintPath>D:\SteamLibrary\steamapps\common\SCP Secret Laboratory Dedicated Server\SCPSL_Data\Managed\LabApi.dll</HintPath>
         </Reference>
+        <Reference Include="Mirror">
+          <HintPath>D:\SteamLibrary\steamapps\common\SCP Secret Laboratory Dedicated Server\SCPSL_Data\Managed\Mirror.dll</HintPath>
+        </Reference>
+        <Reference Include="Pooling">
+          <HintPath>D:\SteamLibrary\steamapps\common\SCP Secret Laboratory Dedicated Server\SCPSL_Data\Managed\Pooling.dll</HintPath>
+        </Reference>
         <Reference Include="System"/>
         <Reference Include="System.Core"/>
         <Reference Include="System.Data"/>
         <Reference Include="System.Xml"/>
+        <Reference Include="UnityEngine.CoreModule">
+          <HintPath>D:\SteamLibrary\steamapps\common\SCP Secret Laboratory Dedicated Server\SCPSL_Data\Managed\UnityEngine.CoreModule.dll</HintPath>
+        </Reference>
     </ItemGroup>
     <ItemGroup>
+        <Compile Include="KeycardEventHandler.cs" />
         <Compile Include="RemoteKeycardConfig.cs" />
         <Compile Include="RemoteKeycardPlugin.cs" />
         <Compile Include="Properties\AssemblyInfo.cs"/>
